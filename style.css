@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  font-size: 18px;
+  font-family: var(--main-font);
+  background: linear-gradient(#0007, #0000), #123;
+  color: white;
+}
+
+.gameArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.gameArea input {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-family: var(--main-font);
+  outline: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.gameArea button {
+  padding: 0.5rem;
+  font-family: var(--main-font);
+  font-size: 1rem;
+  outline: none;
+}
+
+.gameArea h1 {
+  margin-bottom: 1rem;
+}
+
+#gameGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.gameGridCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-weight: 500;
+  font-size: 4rem;
+  text-transform: uppercase;
+  background-color: #787c7f;
+  color: white;
+}
+
+.gameInput {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.bounce {
+  animation: bounce 0.3s infinite alternate;
+}
