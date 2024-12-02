@@ -17203,6 +17203,41 @@ function topText(str) {
   victory.append(text);
 }
 
+function playAgain() {
+  const playAgainField = document.querySelector("#playAgain");
+  const playAgainButton = document.querySelector("#playAgainButton");
+  const inputElement = document.querySelector("#textInput");
+  const inputButton = document.querySelector("#textSubmit");
+  const gridCells = document.querySelectorAll(".gameGridCell");
+  const topTextElement = document.querySelector("#top-text");
+
+  // Display the Play Again field
+  playAgainField.style.display = "block";
+
+  playAgainButton.onclick = () => {
+    // Hide the Play Again field
+    playAgainField.style.display = "none";
+
+    // Clear the game grid
+    gridCells.forEach((cell) => {
+      cell.textContent = "";
+      cell.style.backgroundColor = "";
+    });
+
+    // Reset input and enable fields
+    inputElement.value = "";
+    inputElement.disabled = false;
+    inputButton.disabled = false;
+
+    // Clear any victory or game-over text
+    topTextElement.textContent = "";
+
+    // Reset game variables
+    currentRow = 0;
+    generateWord();
+  };
+}
+
 let currentRow = 0;
 
 function guessWord() {
@@ -17252,6 +17287,13 @@ function guessWord() {
     }
   }
 
+  // Third pass: Turn unmatched letters grey
+  for (let i = 0; i < 5; i++) {
+    if (!matched[i] && gridCells[startIndex + i].style.backgroundColor === "") {
+      gridCells[startIndex + i].style.backgroundColor = "#787c7e";
+    }
+  }
+
   // Increment row after processing
   currentRow++;
 
@@ -17270,6 +17312,7 @@ function guessWord() {
     inputButton.disabled = true;
     inputElement.value = "";
 
+    playAgain();
     return;
   }
 
@@ -17281,6 +17324,7 @@ function guessWord() {
     inputButton.disabled = true;
     inputElement.value = "";
 
+    playAgain();
     return;
   }
 

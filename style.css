@@ -63,13 +63,44 @@ body {
   font-weight: 500;
   font-size: 3rem;
   text-transform: uppercase;
-  background-color: #787c7f;
+  background-color: #181818;
   color: white;
+  border: 2px solid #787c7e;
 }
 
 .gameInput {
   display: flex;
   flex-direction: column;
+}
+
+.playAgain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background-color: #181818;
+  border: 2px solid whitesmoke;
+  padding: 2rem;
+  display: none;
+}
+
+.playAgain button {
+  background-color: rgb(7, 177, 7);
+  font-family: var(--main-font);
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  padding: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 1rem;
+}
+
+.playAgain button:hover {
+  background-color: rgb(9, 117, 9);
+  transition: ease 0.2s;
 }
 
 /* Bounce animation */
