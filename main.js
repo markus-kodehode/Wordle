@@ -17249,7 +17249,6 @@ function guessWord() {
   // Local variables
   const startIndex = currentRow * 5;
   const inputValue = inputElement.value.trim();
-  inputValue = inputValue.toLowerCase();
 
   // Check to see if the inputted word is valid
   if (inputValue.length !== 5) {
