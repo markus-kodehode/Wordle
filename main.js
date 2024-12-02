@@ -17245,10 +17245,11 @@ function guessWord() {
   const inputElement = document.querySelector("#textInput");
   const inputButton = document.querySelector("#textSubmit");
   const gridCells = document.querySelectorAll(".gameGridCell");
+  const inputValue = inputElement.value.trim();
   
   // Local variables
   const startIndex = currentRow * 5;
-  const inputValue = inputElement.value.trim();
+
 
   // Check to see if the inputted word is valid
   if (inputValue.length !== 5) {
