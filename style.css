@@ -9,7 +9,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   font-size: 18px;
   font-family: var(--main-font);
   background: linear-gradient(#0007, #0000), #123;
@@ -21,14 +21,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
 .gameArea input {
   text-align: center;
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 1rem;
   font-family: var(--main-font);
   outline: none;
   padding: 0.5rem;
@@ -58,10 +58,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   font-weight: 500;
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: uppercase;
   background-color: #787c7f;
   color: white;
