@@ -14858,7 +14858,7 @@ const allowedWords = [
   "zymic",
 ];
 
-// Words that will be randomly chosen
+// List of words where a word will be randomly chosen
 const wordList = [
   "aback",
   "abase",
@@ -17240,6 +17240,8 @@ function playAgain() {
 }
 
 let currentRow = 0;
+let fanFare = new Audio("assets/fanfare.mp3");
+fanFare.load();
 
 function guessWord() {
   // Get elements from HTML
@@ -17305,11 +17307,11 @@ function guessWord() {
     topText(
       `Congratulations, you got it! The word was ${inputValue.toUpperCase()}`
     );
+
+    fanFare.play();
+
     const victoryText = document.querySelector("h1");
     victoryText.classList.add("bounce");
-
-    let fanFare = new Audio("assets/fanfare.mp3");
-    fanFare.play();
 
     inputElement.disabled = true;
     inputButton.disabled = true;
