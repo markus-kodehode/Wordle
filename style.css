@@ -82,7 +82,7 @@ body {
   height: auto;
   background-color: #181818;
   border: 2px solid whitesmoke;
-  padding: 2rem;
+  padding: 3rem;
   display: none;
 }
 
@@ -95,10 +95,11 @@ body {
   cursor: pointer;
   font-weight: 600;
   border-radius: 1rem;
+  border: none;
 }
 
 .playAgain button:hover {
-  background-color: rgb(7, 177, 7);
+  background-color: #558d4e;
   transition: ease 0.2s;
 }
 

@@ -17222,6 +17222,7 @@ function playAgain() {
     gridCells.forEach((cell) => {
       cell.textContent = "";
       cell.style.backgroundColor = "";
+      cell.style.borderColor = "#787c7e";
     });
 
     // Reset input and enable fields
@@ -17245,11 +17246,10 @@ function guessWord() {
   const inputElement = document.querySelector("#textInput");
   const inputButton = document.querySelector("#textSubmit");
   const gridCells = document.querySelectorAll(".gameGridCell");
-  const inputValue = inputElement.value.trim();
-  
+  const inputValue = inputElement.value.trim().toLowerCase();
+
   // Local variables
   const startIndex = currentRow * 5;
-
 
   // Check to see if the inputted word is valid
   if (inputValue.length !== 5) {
@@ -17275,6 +17275,7 @@ function guessWord() {
     if (inputArray[i] === randomWordArray[i]) {
       matched[i] = true;
       gridCells[startIndex + i].style.backgroundColor = "#6ca965";
+      gridCells[startIndex + i].style.borderColor = "#6ca965";
       randomWordArray[i] = null; // Prevent re-matching
     }
   }
@@ -17284,6 +17285,7 @@ function guessWord() {
     if (!matched[i] && randomWordArray.includes(inputArray[i])) {
       const index = randomWordArray.indexOf(inputArray[i]);
       gridCells[startIndex + i].style.backgroundColor = "#c8b653";
+      gridCells[startIndex + i].style.borderColor = "#c8b653";
       randomWordArray[index] = null; // Prevent re-matching
     }
   }
